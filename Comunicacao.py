@@ -23,6 +23,7 @@ class ComSerial(object):
         return self.ser
 
     def serialWrite(self,msgWriteSerial):
+        msgWriteSerial = str(msgWriteSerial)
         msgWriteSerial = msgWriteSerial.encode('utf-8')
         msgWriteSerial = msgWriteSerial + b'\n'
         self.ser.write(msgWriteSerial)
