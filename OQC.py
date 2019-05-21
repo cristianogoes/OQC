@@ -5,10 +5,22 @@ import Comunicacao, ScannerFile
 
 df0=[]
 DFX0 = pd.DataFrame(df0)
+df1=[]
+DFX1 = pd.DataFrame(df1)
+df2=[]
+DFX2 = pd.DataFrame(df2)
+df3=[]
+DFX3 = pd.DataFrame(df3)
+df4=[]
+DFX4 = pd.DataFrame(df4)
+df5=[]
+DFX5 = pd.DataFrame(df5)
 df6=[]
 DFX6 = pd.DataFrame(df6)
 df7=[]
 DFX7 = pd.DataFrame(df7)
+df8=[]
+DFX8 = pd.DataFrame(df8)
 
 arrayJig = []
 dfArrayjig = pd.DataFrame(arrayJig, columns=['station', 'port', 'result'])
