@@ -28,8 +28,10 @@ dfArrayjig = pd.DataFrame(arrayJig, columns=['station', 'port', 'result'])
 if __name__=='__main__':
 
     out = ''
-    seri = Comunicacao.ComSerial()
-    t = seri.configSerial()
+    seri = Comunicacao.ComEthernet()
+    seri.configEthernet()
+    # seri = Comunicacao.ComSerial()
+    # t = seri.configSerial()
 
     scanner = ScannerFile.Scandir(pathToWatch="C:\\Users\\bb8ga121\\Desktop\\TESTE_CHIP_IC")
     scanner.configPath()
@@ -43,7 +45,7 @@ if __name__=='__main__':
             ii = 0
             for ii in range(len(newFile)):
 
-                status_indice = scanner.readFile(newFile[ii],3)
+                status_indice = scanner.readFile(newFile[ii],3)[0:1]
                 error_codigo = scanner.readFile(newFile[ii],4)
                 status_test = scanner.readFile(newFile[ii],5)
                 station = scanner.readFile(newFile[ii],7)[1:2]
@@ -78,14 +80,13 @@ if __name__=='__main__':
                 wwww = X1[0][y]
                 print("Valor a ser enviado: ",wwww)
                 X1 = X1.drop([y],axis=0)
-                seri.serialWrite(wwww)
-                out = t.readline()
-                """
-                if out != '':
-                    if out == b'finalizado\n':
-                        print(">> NEXT: ")
-                    out = ''
-                """
+                #seri.serialWrite(wwww)
+                seri.ethernetWrite(wwww)
+                #out = t.readline()
+                while out == '':
+                    out = seri.ethernetRead()
+                    print("~:",out)
+                out= ''
                 y += 1
             if DFX6.size:
                 DFX6 = DFX6.drop([0, 1, 2, 3], axis=0)
