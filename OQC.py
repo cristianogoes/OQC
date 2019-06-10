@@ -33,7 +33,8 @@ if __name__=='__main__':
     # seri = Comunicacao.ComSerial()
     # t = seri.configSerial()
 
-    scanner = ScannerFile.Scandir(pathToWatch="C:\\Users\\bb8ga121\\Desktop\\TESTE_CHIP_IC")
+    #scanner = ScannerFile.Scandir(pathToWatch="C:\\Users\\bb8ga121\\Desktop\\TESTE_CHIP_IC")
+    scanner = ScannerFile.Scandir(pathToWatch="C:\OQC")
     scanner.configPath()
     time.sleep(1)
 
