@@ -25,7 +25,7 @@ class ComSerial(object):
     def serialWrite(self,msgWriteSerial):
         msgWriteSerial = str(msgWriteSerial)
         msgWriteSerial = msgWriteSerial.encode('utf-8')
-        msgWriteSerial = msgWriteSerial + b'\n'
+        msgWriteSerial = msgWriteSerial = b'\r\n'
         self.ser.write(msgWriteSerial)
 
     def serialRead(self):
@@ -37,7 +37,7 @@ class ComSerial(object):
 
 class ComEthernet(object):
 
-    def __init__(self, host='169.254.247.90', portIP=5800):
+    def __init__(self, host='192.168.0.101', portIP=5800):
         self.host = host
         self.portIP = portIP
 
