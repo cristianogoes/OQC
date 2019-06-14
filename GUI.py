@@ -18,12 +18,14 @@ class screenOQC(threading.Thread):
 
         self.x1 = 0
         self.x2 = 0
+        self.firstaccess = True
+        self.firstaccess2 = True
 
         self.input = True
         self.input_w = True
         self.input_r = False
 
-        self.loop_new = False
+        self.loop_new = True
         self.loop_active_w = False
         self.loop_active_r = False
 
@@ -33,6 +35,50 @@ class screenOQC(threading.Thread):
         self.num_apr = 0
         self.num_rep = 0
 
+        self.sta1 = 1
+        self.sta2 = 1
+        self.sta3 = 1
+        self.sta4 = 1
+        self.sta5 = 1
+        self.sta6 = 1
+        self.sta7 = 1
+        self.sta8 = 1
+
+        self.a1 = 0
+        self.b1 = 0
+
+        self.strComputer1 = "169.254.39.134"
+        self.strUser1 = 'DBMT01\\bb8ga121'
+        self.strPassword1 = 'Icct@052019'
+
+        self.strComputer2 = "169.254.39.134"
+        self.strUser2 = 'DBMT01\\bb8ga121'
+        self.strPassword2 = 'Icct@052019'
+
+        self.strComputer3 = "169.254.39.134"
+        self.strUser3 = 'DBMT01\\bb8ga121'
+        self.strPassword3 = 'Icct@052019'
+
+        self.strComputer4 = "169.254.39.134"
+        self.strUser4 = 'DBMT01\\bb8ga121'
+        self.strPassword4 = 'Icct@052019'
+
+        self.strComputer5 = "169.254.39.134"
+        self.strUser5 = 'DBMT01\\bb8ga121'
+        self.strPassword5 = 'Icct@052019'
+
+        self.strComputer6 = "169.254.39.134"
+        self.strUser6 = 'DBMT01\\bb8ga121'
+        self.strPassword6 = 'Icct@052019'
+
+        self.strComputer7 = "169.254.39.134"
+        self.strUser7 = 'DBMT01\\bb8ga121'
+        self.strPassword7 = 'Icct@052019'
+
+        self.strComputer8 = "169.254.39.134"
+        self.strUser8 = 'DBMT01\\bb8ga121'
+        self.strPassword8 = 'Icct@052019'
+
         self.label2 = Label(self.root, text="Hello", font="Arial 30", width=10)
         # self.label2.pack()
         self.label = Label(self.root, text="0 s", font="Arial 30", width=10)
@@ -40,15 +86,13 @@ class screenOQC(threading.Thread):
         self.label1 = Label(self.root, text=">>> 0 s", font="Arial 30", width=10)
         # self.label1.pack()
 
-        #self.label.after(1000, self.refresh_label)
-
         self.root.title("Outgoing Quality C")
         self.root.maxsize(width=800, height=600)
         self.root.minsize(width=800, height=600)
         self.frame = Frame(parent)
         self.frame.pack()
 
-        self.center()
+        self.center(self.root)
         self.root.resizable(0,0)
         self.root.protocol('WM_DELETE_WINDOW', self.disableX)
 
@@ -59,7 +103,6 @@ class screenOQC(threading.Thread):
         self.graphPie()
         self.graph2()
         self.frame3()
-        #self.oqcIni()
 
         threading.Thread.__init__(self)
         threading.Thread(target=self.run)
@@ -67,11 +110,15 @@ class screenOQC(threading.Thread):
 
         self.start()
 
-    def screenGUI(self):
-        screenConfiguration(self.root)
+    def ssdconect(self):
+        self.count1 = ScannerFile.ScandirSSD.sccannerSSD(self.strComputer1,self.strUser1,self.strPassword1)
+        print(self.count1)
 
-    def screenReport(self):
-        screenConfiguration(self.root)
+    def screenGUI(self):
+        self.screenTest(self.root)
+
+    def report(self):
+        ScreenConfiguration(self.root)
 
     def menuOQC(self):
         menu = Menu(self.root)
@@ -80,9 +127,9 @@ class screenOQC(threading.Thread):
         subMenu = Menu(menu, tearoff=0)
         menu.add_cascade(label='File', menu=subMenu)
         subMenu.add_command(label='Configuration', command=self.screenGUI)
-        subMenu.add_command(label='Report', command=self.screenReport)
+        subMenu.add_command(label='Report', command=self.report)
         subMenu.add_separator()
-        subMenu.add_command(label='Quit', command=self.h0)
+        subMenu.add_command(label='Quit', command=self.quit)
 
         helpMenu = Menu(menu, tearoff=0)
         menu.add_cascade(label="Help", menu=helpMenu)
@@ -95,9 +142,9 @@ class screenOQC(threading.Thread):
         btn.pack(side=LEFT, padx=2, pady=2)
         confButton = Button(toolbar, text='Configuration', command=self.screenGUI)
         confButton.pack(side=LEFT, padx=2, pady=2)
-        reportButton = Button(toolbar, text='Report', command=self.screenReport)
+        reportButton = Button(toolbar, text='Report', command=self.report)
         reportButton.pack(side=LEFT, padx=2, pady=2)
-        exitButton = Button(toolbar, text='Exit', command=self.h0)
+        exitButton = Button(toolbar, text='Exit', command=self.quit)
         exitButton.pack(side=RIGHT, padx=2, pady=2)
 
         toolbar.pack(side=TOP, fill=X)
@@ -107,7 +154,7 @@ class screenOQC(threading.Thread):
         #status = Label(self.root, text="Preparing to do nothing.....", bd=1, relief=SUNKEN, anchor=W)
         self.status.pack(side=BOTTOM,fill=X)
 
-    def scale_image(self,input_image_path, output_image_path, width=None, height=None):
+    def scale_image(self, input_image_path, output_image_path, width=None, height=None):
         original_image = Image.open(input_image_path)
         w, h = original_image.size
         print('The original image size is {wide} wide x {height} '
@@ -171,26 +218,42 @@ class screenOQC(threading.Thread):
         Version 1.0
         Created by Cristiano Goes & Evandro Duarte""")
 
-    def doNothing(self):
-        print("ok ok I won't....")
-
-    def h0(self):
+    def quit(self):
         answer = tkinter.messagebox.askquestion('Question', 'Deseja realmente sair?')
 
         if answer == 'yes':
             self.root.destroy()
             sys.exit()
 
-    def center(self):
-        self.root.update_idletasks()
-        width = self.root.winfo_width()
-        height = self.root.winfo_height()
-        x = (self.root.winfo_screenwidth() // 2) - (width // 2)
-        y = (self.root.winfo_screenheight() // 2) - (height // 2)
-        self.root.geometry('{}x{}+{}+{}'.format(width, height, x, y-30))
-
     def disableX(self):
         pass
+
+    def center(self, parent):
+        screen = parent
+        screen.update_idletasks()
+        width = screen.winfo_width()
+        height = screen.winfo_height()
+        x = (screen.winfo_screenwidth() // 2) - (width // 2)
+        y = (screen.winfo_screenheight() // 2) - (height // 2)
+        screen.geometry('{}x{}+{}+{}'.format(width, height, x, y-30))
+
+    def hide(self, parent):
+        parent.withdraw()
+
+    def onCloseOtherFrame(self, parent, otherFrame):
+        """"""
+        answer = tkinter.messagebox.askquestion('Question', 'Deseja salvar os valores alterados?')
+
+        if answer == 'yes':
+            self.refresh_screenTest()
+
+        otherFrame.destroy()
+        self.show(parent)
+
+    def show(self, parent):
+        """"""
+        parent.update()
+        parent.deiconify()
 
     def graphPie(self):
         self.frame2 = Frame(self.root)
@@ -264,11 +327,16 @@ class screenOQC(threading.Thread):
         arrayJig = []
         self.dfArrayjig = pd.DataFrame(arrayJig, columns=['station', 'port', 'result'])
 
-        inputJig =  [1,2,3,4,5,6,7,8]
-        confJig = [0,0,1,0,0,0,0,1,1]
-        self.dfInputJig = deque(inputJig)
+        arrayLog = []
+        self.dfArraylog = pd.DataFrame(arrayLog, columns=['name','pc','port','line 1','line 2','status', 'code error','result',
+                                            'line 6','port-worker','line 8', 'line 9','line 10','date - time'])
+
+        self.filename = 'Log OQC.xlsx'
+        self.dfArraylog.to_excel(self.filename)
+
+        confJig = [0, self.sta1,self.sta2,self.sta3,self.sta4,self.sta5,self.sta6,self.sta7,self.sta8]
         self.deqconfJig = deque(confJig)
-        print(self.dfInputJig)
+        print(self.deqconfJig)
 
         self.seri = Comunicacao.ComSerial()
         self.t = self.seri.configSerial()
@@ -276,7 +344,6 @@ class screenOQC(threading.Thread):
 
         #self.ether = Comunicacao.ComEthernet()
         #self.ether.configEthernet()
-
 
         self.scanner = ScannerFile.Scandir(pathToWatch="C:\\Users\\bb8ga121\\Desktop\\TESTE_CHIP_IC")
         #self.scanner = ScannerFile.Scandir(pathToWatch="C:\\OQC")
@@ -289,15 +356,37 @@ class screenOQC(threading.Thread):
         if newFile:
             ii = 0
             for ii in range(len(newFile)):
+                nameLog = newFile[ii]
+                pcLog = self.scanner.readFile(newFile[ii], 7)[1:2]
+                portLog = newFile[ii][(len(newFile[ii]) - 5):(len(newFile[ii]) - 4)]
+                line1Log = self.scanner.readFile(newFile[ii], 1)
+                line2Log = self.scanner.readFile(newFile[ii], 2)
+                statusLog = self.scanner.readFile(newFile[ii], 3)
+                codeErrorLog = self.scanner.readFile(newFile[ii], 4)
+                resultLog = self.scanner.readFile(newFile[ii], 5)
+                line6Log = self.scanner.readFile(newFile[ii], 6)
+                portWorkerLog = self.scanner.readFile(newFile[ii], 7)
+                line8Log = self.scanner.readFile(newFile[ii], 8)
+                line9Log = self.scanner.readFile(newFile[ii], 9)
+                line10Log = self.scanner.readFile(newFile[ii], 10)
+                dateTimeLog = self.scanner.readFile(newFile[ii], 11)
+
                 status_indice = self.scanner.readFile(newFile[ii], 3)[0:1]
                 error_codigo = self.scanner.readFile(newFile[ii], 4)
                 status_test = self.scanner.readFile(newFile[ii], 5)
                 station = self.scanner.readFile(newFile[ii], 7)[1:2]
                 porta = newFile[ii][(len(newFile[ii]) - 5):(len(newFile[ii]) - 4)]
 
-                self.dfArrayjig = self.dfArrayjig.append(pd.Series([station, porta, status_indice], index=self.dfArrayjig.columns),
-                                               ignore_index=True)
+                self.dfArrayjig = self.dfArrayjig.append(pd.Series([station, porta, status_indice],
+                                            index=self.dfArrayjig.columns), ignore_index=True)
+
+                self.dfArraylog = self.dfArraylog.append(pd.Series([nameLog, pcLog, portLog, line1Log, line2Log,
+                            statusLog, codeErrorLog, resultLog, line6Log, portWorkerLog, line8Log, line9Log, line10Log,
+                            dateTimeLog], index=self.dfArraylog.columns), ignore_index=True)
                 ii += 1
+
+            with pd.ExcelWriter(self.filename, mode='w') as writer:
+                self.dfArraylog.to_excel(writer)
 
         self.X1 = self.dfArrayjig[self.dfArrayjig['station'] == '1'].copy()
         self.X2 = self.dfArrayjig[self.dfArrayjig['station'] == '2'].copy()
@@ -311,7 +400,7 @@ class screenOQC(threading.Thread):
         print('Database')
         print(self.dfArrayjig)
 
-        if self.deqconfJig[1]:
+        if self.sta1:
             if self.X1.station.count() == 4:
                 self.X1 = self.X1.sort_values(by=['port'])
                 self.DFX1 = self.X1['station'].map(str) + self.X1['port'].map(str) + self.X1['result'].map(str)
@@ -320,7 +409,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '1'].index, inplace=True)
 
-        if self.deqconfJig[2]:
+        if self.sta2:
             if self.X2.station.count() == 4:
                 self.X2 = self.X2.sort_values(by=['port'])
                 self.DFX2 = self.X2['station'].map(str) + self.X2['port'].map(str) + self.X2['result'].map(str)
@@ -329,7 +418,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '2'].index, inplace=True)
 
-        if self.deqconfJig[3]:
+        if self.sta3:
             if self.X3.station.count() == 4:
                 self.X3 = self.X3.sort_values(by=['port'])
                 self.DFX3 = self.X3['station'].map(str) + self.X3['port'].map(str) + self.X3['result'].map(str)
@@ -338,7 +427,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '3'].index, inplace=True)
 
-        if self.deqconfJig[4]:
+        if self.sta4:
             if self.X4.station.count() == 4:
                 self.X4 = self.X4.sort_values(by=['port'])
                 self.DFX4 = self.X4['station'].map(str) + self.X4['port'].map(str) + self.X4['result'].map(str)
@@ -347,7 +436,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '4'].index, inplace=True)
 
-        if self.deqconfJig[5]:
+        if self.sta5:
             if self.X5.station.count() == 4:
                 self.X5 = self.X5.sort_values(by=['port'])
                 self.DFX5 = self.X5['station'].map(str) + self.X5['port'].map(str) + self.X5['result'].map(str)
@@ -356,7 +445,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '5'].index, inplace=True)
 
-        if self.deqconfJig[6]:
+        if self.sta6:
             if self.X6.station.count() == 4:
                 self.X6 = self.X6.sort_values(by=['port'])
                 self.DFX6 = self.X6['station'].map(str) + self.X6['port'].map(str) + self.X6['result'].map(str)
@@ -365,7 +454,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '6'].index, inplace=True)
 
-        if self.deqconfJig[7]:
+        if self.sta7:
             if self.X7.station.count() == 4:
                 self.X7 = self.X7.sort_values(by=['port'])
                 self.DFX7 = self.X7['station'].map(str) + self.X7['port'].map(str) + self.X7['result'].map(str)
@@ -374,7 +463,7 @@ class screenOQC(threading.Thread):
         else:
             self.dfArrayjig.drop(self.dfArrayjig[self.dfArrayjig.station == '7'].index, inplace=True)
 
-        if self.deqconfJig[8]:
+        if self.sta8:
             if self.X8.station.count() == 4:
                 self.X8 = self.X8.sort_values(by=['port'])
                 self.DFX8 = self.X8['station'].map(str) + self.X8['port'].map(str) + self.X8['result'].map(str)
@@ -411,6 +500,7 @@ class screenOQC(threading.Thread):
             self.yy = 0
             self.loop_new = False
             self.loop_active_w = True
+            self.loop_active_r = False
             self.refresh_label1()
 
     def run(self):
@@ -419,9 +509,10 @@ class screenOQC(threading.Thread):
                 self.out = ''
 
                 self.out = self.t.readline()
-                # self.out = self.ether.ethernetRead()
+                #self.out = self.ether.ethernetRead()
 
                 if self.out != '':
+                    self.input = False
                     self.input_w = True
                     self.input_r = False
                     self.label1.after(2000, self.refresh_label1)
@@ -433,12 +524,17 @@ class screenOQC(threading.Thread):
                 #self.out = self.ether.ethernetRead()
 
                 if self.out != '':
-                    self.label2.configure(text="%s" %self.seconds)
-                    self.loop_active_w = True
-                    self.loop_active_r = False
-                    self.yy += 4
-                    #self.root.update()
-                    self.label1.after(2000, self.refresh_label1)
+                    if self.dfSend.size:
+                        self.label2.configure(text="%s" %self.seconds)
+                        self.loop_active_w = True
+                        self.loop_active_r = False
+                        self.yy += 4
+                        #self.root.update()
+                        self.label1.after(2000, self.refresh_label1)
+                    else:
+                        self.wwww = "I" + str(self.sta1) + str(self.sta2) + str(self.sta3) + str(self.sta4) + str(
+                            self.sta5) + str(self.sta6) + str(self.sta7) + str(self.sta8)
+                        self.seri.serialWrite(self.wwww)
 
     def refresh_label(self):
         """ refresh the content of the label every second """
@@ -479,9 +575,9 @@ class screenOQC(threading.Thread):
     def refresh_label1(self):
         """ refresh the content of the label every second """
         if self.input_w:
-            if self.dfInputJig:
-                    self.temp = self.dfInputJig.popleft()
-                    self.wwww = "I"+str(self.temp)
+            if self.input:
+                    self.wwww = "I"+str(self.sta1)+str(self.sta2)+str(self.sta3)+str(self.sta4)+str(self.sta5)\
+                                +str(self.sta6)+str(self.sta7)+str(self.sta8)
                     print("Valor a ser enviado: ", self.wwww)
 
                     self.seri.serialWrite(self.wwww)
@@ -489,12 +585,10 @@ class screenOQC(threading.Thread):
 
                     self.input_w = False
                     self.input_r = True
-
             else:
                 self.loop_new = True
                 self.input_w = False
                 self.input_r = False
-
 
         if self.loop_active_w:
             if self.dfSend.size:
@@ -524,10 +618,18 @@ class screenOQC(threading.Thread):
             else:
                 self.loop_new = True
 
-# ----------------------------------------------------------------------
-class screenConfiguration(object):
-    def __init__(self,parent):
-        """Constructor"""
+    def refresh_screenTest(self):
+        self.sta1 = self.chk_state1.get()
+        self.sta2 = self.chk_state2.get()
+        self.sta3 = self.chk_state3.get()
+        self.sta4 = self.chk_state4.get()
+        self.sta5 = self.chk_state5.get()
+        self.sta6 = self.chk_state6.get()
+        self.sta7 = self.chk_state7.get()
+        self.sta8 = self.chk_state8.get()
+
+    def screenTest(self, parent):
+
         self.screenRoot = parent
         self.hide(self.screenRoot)
 
@@ -539,20 +641,97 @@ class screenConfiguration(object):
         self.otherFrame.resizable(0, 0)
         self.otherFrame.protocol('WM_DELETE_WINDOW', self.disableX)
 
-        handler = lambda: self.onCloseOtherFrame(self.screenRoot,self.otherFrame)
-        btn = Button(self.otherFrame, text="Close", command=handler)
+        toolbar = Frame(self.otherFrame)
+
+        handler = lambda: self.onCloseOtherFrame(self.screenRoot, self.otherFrame)
+        btn = Button(toolbar, text="Close", command=handler)
+        btn.pack(side=RIGHT, padx=2, pady=2)
+        btn1 = Button(toolbar, text="Save", command=self.refresh_screenTest)
+        btn1.pack(side=LEFT, padx=2, pady=2)
+
+        toolbar.pack(side=TOP, fill=X)
+
+        checkbox = Frame(self.otherFrame)
+
+        if self.firstaccess:
+            self.chk_state1 = IntVar()
+            self.chk_state2 = IntVar()
+            self.chk_state3 = IntVar()
+            self.chk_state4 = IntVar()
+            self.chk_state5 = IntVar()
+            self.chk_state6 = IntVar()
+            self.chk_state7 = IntVar()
+            self.chk_state8 = IntVar()
+
+            self.chk_state1.set(True)
+            self.chk_state2.set(True)
+            self.chk_state3.set(True)
+            self.chk_state4.set(True)
+            self.chk_state5.set(True)
+            self.chk_state6.set(True)
+            self.chk_state7.set(True)
+            self.chk_state8.set(True)
+
+            self.firstaccess = False
+        else:
+            self.chk_state1.set(self.sta1)
+            self.chk_state2.set(self.sta2)
+            self.chk_state3.set(self.sta3)
+            self.chk_state4.set(self.sta4)
+            self.chk_state5.set(self.sta5)
+            self.chk_state6.set(self.sta6)
+            self.chk_state7.set(self.sta7)
+            self.chk_state8.set(self.sta8)
+
+        self.chk1 = Checkbutton(checkbox, text='Station 1', var=self.chk_state1)
+        self.chk1.pack(side=TOP, padx=1, pady=1)
+        self.chk2 = Checkbutton(checkbox, text='Station 2', var=self.chk_state2)
+        self.chk2.pack(side=TOP, padx=1, pady=1)
+        self.chk3 = Checkbutton(checkbox, text='Station 3', var=self.chk_state3)
+        self.chk3.pack(side=TOP, padx=1, pady=1)
+        self.chk4 = Checkbutton(checkbox, text='Station 4', var=self.chk_state4)
+        self.chk4.pack(side=TOP, padx=1, pady=1)
+        self.chk5 = Checkbutton(checkbox, text='Station 5', var=self.chk_state5)
+        self.chk5.pack(side=TOP, padx=1, pady=1)
+        self.chk6 = Checkbutton(checkbox, text='Station 6', var=self.chk_state6)
+        self.chk6.pack(side=TOP, padx=1, pady=1)
+        self.chk7 = Checkbutton(checkbox, text='Station 7', var=self.chk_state7)
+        self.chk7.pack(side=TOP, padx=1, pady=1)
+        self.chk8 = Checkbutton(checkbox, text='Station 8', var=self.chk_state8)
+        self.chk8.pack(side=TOP, padx=1, pady=1)
+
+        checkbox.pack(side=LEFT)
+
+
+# ----------------------------------------------------------------------
+class ScreenConfiguration(object):
+    def __init__(self, parent):
+        """Constructor"""
+        self.screenRoot = parent
+        self.hide(self.screenRoot)
+
+        self.otherFrame = Toplevel()
+        self.otherFrame.geometry("400x300")
+        self.otherFrame.title("otherFrame")
+
+        self.center()
+        self.otherFrame.resizable(0, 0)
+        self.otherFrame.protocol('WM_DELETE_WINDOW', self.disablex)
+
+        btn = Button(self.otherFrame, text="Close", command=self.handler)
         btn.pack()
 
-        # variable storing time
         self.seconds = 0
-        # label displaying time
         self.label = Label(self.otherFrame, text="0 s", font="Arial 30", width=10)
         self.label.pack()
-        # start the timer
+
         self.label.after(1000, self.refresh_label)
 
-    def center(self,parent):
-        screen = parent
+    def handler(self):
+        self.onCloseOtherFrame(self.screenRoot, self.otherFrame)
+
+    def center(self):
+        screen = self.otherFrame
         screen.update_idletasks()
         width = screen.winfo_width()
         height = screen.winfo_height()
@@ -560,13 +739,13 @@ class screenConfiguration(object):
         y = (screen.winfo_screenheight() // 2) - (height // 2)
         screen.geometry('{}x{}+{}+{}'.format(width, height, x, y-30))
 
-    def disableX(self):
+    def disablex(self):
         pass
 
-    def hide(self,parent):
+    def hide(self, parent):
         parent.withdraw()
 
-    def onCloseOtherFrame(self, parent,otherFrame):
+    def onCloseOtherFrame(self, parent, otherFrame):
         """"""
         otherFrame.destroy()
         self.show(parent)

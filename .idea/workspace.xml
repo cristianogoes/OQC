@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="836a6325-3b36-477b-8b3d-3ec5a02989be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comunicacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comunicacao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScannerFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/ScannerFile.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,12 +15,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OQC.py">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#1#12#0" expanded="true" />
+                <element signature="e#1#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,26 +29,41 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="311" column="30" selection-start-line="311" selection-start-column="30" selection-end-line="311" selection-end-column="30" />
+            <state relative-caret-position="-3738">
+              <caret line="113" column="20" lean-forward="true" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#1766#1796#0" />
-                <element signature="e#1834#1864#0" />
-                <element signature="e#1897#2450#0" />
-                <element signature="e#2486#3056#0" />
-                <element signature="e#3094#3303#0" />
-                <element signature="e#3401#4216#0" />
-                <element signature="e#4251#5311#0" />
-                <element signature="e#5346#5642#0" />
-                <element signature="e#5677#5703#0" />
-                <element signature="e#5731#5892#0" />
-                <element signature="e#5924#6237#0" />
-                <element signature="e#6271#6275#0" />
-                <element signature="e#6309#6984#0" />
-                <element signature="e#7017#7929#0" />
-                <element signature="e#7961#8245#0" />
-                <element signature="e#20070#21945#0" />
+                <element signature="e#2204#2230#0" />
+                <element signature="e#2262#2292#0" />
+                <element signature="e#2325#2874#0" />
+                <element signature="e#2910#3471#0" />
+                <element signature="e#3509#3718#0" />
+                <element signature="e#3817#4632#0" />
+                <element signature="e#4667#5728#0" />
+                <element signature="e#5763#6059#0" />
+                <element signature="e#6089#6250#0" />
+                <element signature="e#6284#6288#0" />
+                <element signature="e#6328#6647#0" />
+                <element signature="e#6685#6702#0" />
+                <element signature="e#6765#6993#0" />
+                <element signature="e#7031#7088#0" />
+                <element signature="e#7122#7797#0" />
+                <element signature="e#7830#8742#0" />
+                <element signature="e#8774#9058#0" />
+                <element signature="e#18911#20169#0" />
+                <element signature="e#20208#21545#0" />
+                <element signature="e#21585#23588#0" />
+                <element signature="e#23632#23959#0" />
+                <element signature="e#24004#26890#0" />
+                <element signature="e#27005#28793#0" />
+                <element signature="e#27041#27664#0" />
+                <element signature="e#27697#27753#0" />
+                <element signature="e#27785#28113#0" />
+                <element signature="e#28147#28151#0" />
+                <element signature="e#28189#28206#0" />
+                <element signature="e#28269#28330#0" />
+                <element signature="e#28367#28424#0" />
+                <element signature="e#28463#28793#0" />
               </folding>
             </state>
           </provider>
@@ -57,8 +72,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScannerFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            <state relative-caret-position="461">
+              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+              <folding>
+                <element signature="e#15#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +84,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Comunicacao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="425">
+              <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+              <folding>
+                <element signature="e#111#127#0" />
+                <element signature="e#165#492#0" />
+                <element signature="e#544#725#0" />
+                <element signature="e#761#950#0" />
+                <element signature="e#1047#1092#0" />
+                <element signature="e#1132#1265#0" />
+                <element signature="e#1321#1466#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +127,14 @@
       <find>self.y</find>
       <find>self.loop_new</find>
       <find>self.statusRun</find>
+      <find>h0</find>
+      <find>self.ether</find>
+      <find>error_codigo</find>
+      <find>INPUTjIG</find>
       <find>self.input</find>
+      <find>deqconfJig</find>
+      <find>sta8</find>
+      <find>qui</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +147,6 @@
         <option value="$PROJECT_DIR$/dfdss.py" />
         <option value="$PROJECT_DIR$/Log.py" />
         <option value="$PROJECT_DIR$/ScannerLogcb cnh.py" />
-        <option value="$PROJECT_DIR$/ScannerFile.py" />
         <option value="$PROJECT_DIR$/../Python_/Perceptron.py" />
         <option value="$PROJECT_DIR$/../Python_/Revisar/scratch_3.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/T2.py" />
@@ -144,7 +177,6 @@
         <option value="$PROJECT_DIR$/GUI - V4.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/interativo grafico.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/rrr.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/server.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/client.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/SD_E.py" />
@@ -152,6 +184,9 @@
         <option value="$PROJECT_DIR$/GU4.py" />
         <option value="$PROJECT_DIR$/GUI - V2.py" />
         <option value="$PROJECT_DIR$/Comunicacao.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/che.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py" />
+        <option value="$PROJECT_DIR$/ScannerFile.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
       </list>
     </option>
@@ -167,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,6 +222,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -214,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GUI">
+  <component name="RunManager" selected="Python.Teste-hard">
     <configuration name="Comunicacao" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OQC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,48 +263,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Comunicacao.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GU4" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OQC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GU4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GUI - V2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OQC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI - V2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -320,13 +313,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Teste-hard" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OQC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="che" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OQC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/che.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Teste-hard" />
         <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.che" />
         <item itemvalue="Python.Comunicacao" />
         <item itemvalue="Python.Python GUI - 3" />
-        <item itemvalue="Python.GUI - V2" />
-        <item itemvalue="Python.GU4" />
       </list>
     </recent_temporary>
   </component>
@@ -376,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560167278183</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Acréscimo dos demais jigs e dos inputs">
+      <created>1560395053353</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1560395053353</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -392,12 +434,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18835099" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.4979592" weight="0.4222586" />
       <window_info anchor="bottom" id="Python Console" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.4989796" visible="true" weight="0.119476266" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.4989796" weight="0.27659574" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50102043" side_tool="true" weight="0.4222586" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.20785597" />
@@ -408,7 +450,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Run" order="3" visible="true" weight="0.21709532" />
+      <window_info anchor="right" id="Run" order="3" visible="true" weight="0.16263238" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18303572" />
@@ -476,59 +518,10 @@
     <MESSAGE value="Criação dos df" />
     <MESSAGE value="Criação da interface e inclusão do ethernet" />
     <MESSAGE value="Integração da interface com o programa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integração da interface com o programa" />
+    <MESSAGE value="Acréscimo dos demais jigs e dos inputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Acréscimo dos demais jigs e dos inputs" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/tt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_10.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_9.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#1#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -712,23 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rrr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/clock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/interativo grafico.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -751,44 +727,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#1#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/SD_E.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Teste-hard.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GU4.py" />
     <entry file="file://$PROJECT_DIR$/GUI - V2.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Python GUI - 3.py">
@@ -801,23 +740,9 @@
     <entry file="file://$PROJECT_DIR$/ICCT_scaled.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Comunicacao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ScannerFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OQC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="187">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
@@ -825,28 +750,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rrr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="311" column="30" selection-start-line="311" selection-start-column="30" selection-end-line="311" selection-end-column="30" />
+        <state relative-caret-position="238">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/demo_simple.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/clock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/SD_E.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/setup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/T1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-984" />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/t-exe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/che.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#1766#1796#0" />
-            <element signature="e#1834#1864#0" />
-            <element signature="e#1897#2450#0" />
-            <element signature="e#2486#3056#0" />
-            <element signature="e#3094#3303#0" />
-            <element signature="e#3401#4216#0" />
-            <element signature="e#4251#5311#0" />
-            <element signature="e#5346#5642#0" />
-            <element signature="e#5677#5703#0" />
-            <element signature="e#5731#5892#0" />
-            <element signature="e#5924#6237#0" />
-            <element signature="e#6271#6275#0" />
-            <element signature="e#6309#6984#0" />
-            <element signature="e#7017#7929#0" />
-            <element signature="e#7961#8245#0" />
-            <element signature="e#20070#21945#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comunicacao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+          <folding>
+            <element signature="e#111#127#0" />
+            <element signature="e#165#492#0" />
+            <element signature="e#544#725#0" />
+            <element signature="e#761#950#0" />
+            <element signature="e#1047#1092#0" />
+            <element signature="e#1132#1265#0" />
+            <element signature="e#1321#1466#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScannerFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3738">
+          <caret line="113" column="20" lean-forward="true" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#2204#2230#0" />
+            <element signature="e#2262#2292#0" />
+            <element signature="e#2325#2874#0" />
+            <element signature="e#2910#3471#0" />
+            <element signature="e#3509#3718#0" />
+            <element signature="e#3817#4632#0" />
+            <element signature="e#4667#5728#0" />
+            <element signature="e#5763#6059#0" />
+            <element signature="e#6089#6250#0" />
+            <element signature="e#6284#6288#0" />
+            <element signature="e#6328#6647#0" />
+            <element signature="e#6685#6702#0" />
+            <element signature="e#6765#6993#0" />
+            <element signature="e#7031#7088#0" />
+            <element signature="e#7122#7797#0" />
+            <element signature="e#7830#8742#0" />
+            <element signature="e#8774#9058#0" />
+            <element signature="e#18911#20169#0" />
+            <element signature="e#20208#21545#0" />
+            <element signature="e#21585#23588#0" />
+            <element signature="e#23632#23959#0" />
+            <element signature="e#24004#26890#0" />
+            <element signature="e#27005#28793#0" />
+            <element signature="e#27041#27664#0" />
+            <element signature="e#27697#27753#0" />
+            <element signature="e#27785#28113#0" />
+            <element signature="e#28147#28151#0" />
+            <element signature="e#28189#28206#0" />
+            <element signature="e#28269#28330#0" />
+            <element signature="e#28367#28424#0" />
+            <element signature="e#28463#28793#0" />
           </folding>
         </state>
       </provider>
