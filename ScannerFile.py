@@ -31,17 +31,3 @@ class Scandir(object):
                 if numLine == targetLine:
                     break
         return resultLine
-
-class ScandirSSD(object):
-
-    def __int__(self):
-        self.ssd = dict()
-
-    def sccannerSSD(self, Computer,User,Password):
-        objWMIService = win32com.client.Dispatch("WbemScripting.SWbemLocator")
-        objSWbemServices = objWMIService.ConnectServer(Computer, "root\cimv2", User, Password)
-        colItems = objSWbemServices.ExecQuery("SELECT * FROM Win32_IDEController")
-
-        self.ssd = dict([(f.Name, None) for f in colItems])
-
-        return len(self.ssd)-1

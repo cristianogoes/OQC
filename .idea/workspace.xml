@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="836a6325-3b36-477b-8b3d-3ec5a02989be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comunicacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comunicacao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScannerFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/ScannerFile.py" afterDir="false" />
     </list>
@@ -14,56 +15,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="2948">
+              <caret line="668" column="24" selection-start-line="668" selection-start-column="24" selection-end-line="668" selection-end-column="24" />
               <folding>
-                <element signature="e#1#44#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#2972#3008#0" />
+                <element signature="e#3359#3385#0" />
+                <element signature="e#3417#3447#0" />
+                <element signature="e#3480#4029#0" />
+                <element signature="e#4065#4750#0" />
+                <element signature="e#4788#4997#0" />
+                <element signature="e#5096#5911#0" />
+                <element signature="e#5946#7007#0" />
+                <element signature="e#7042#7338#0" />
+                <element signature="e#7368#7529#0" />
+                <element signature="e#7563#7567#0" />
+                <element signature="e#7607#7926#0" />
+                <element signature="e#7964#7981#0" />
+                <element signature="e#8044#8272#0" />
+                <element signature="e#8310#8367#0" />
+                <element signature="e#8401#9076#0" />
+                <element signature="e#9109#10021#0" />
+                <element signature="e#10053#10362#0" />
+                <element signature="e#10446#12373#0" />
+                <element signature="e#12409#21090#0" />
+                <element signature="e#21078#21477#0" />
+                <element signature="e#23420#24914#0" />
+                <element signature="e#24923#25420#0" />
+                <element signature="e#27765#28092#0" />
+                <element signature="e#28904#31790#0" />
+                <element signature="e#31941#32564#0" />
+                <element signature="e#32597#32653#0" />
+                <element signature="e#32685#33013#0" />
+                <element signature="e#33047#33051#0" />
+                <element signature="e#33089#33106#0" />
+                <element signature="e#33169#33230#0" />
+                <element signature="e#33267#33324#0" />
+                <element signature="e#33363#33693#0" />
+                <element signature="e#34517#34573#0" />
+                <element signature="e#34605#34933#0" />
+                <element signature="e#34967#34971#0" />
+                <element signature="e#35009#35026#0" />
+                <element signature="e#35089#35150#0" />
+                <element signature="e#35187#35244#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GUI.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../DataTrackExport2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3738">
-              <caret line="113" column="20" lean-forward="true" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+            <state relative-caret-position="1241">
+              <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#2204#2230#0" />
-                <element signature="e#2262#2292#0" />
-                <element signature="e#2325#2874#0" />
-                <element signature="e#2910#3471#0" />
-                <element signature="e#3509#3718#0" />
-                <element signature="e#3817#4632#0" />
-                <element signature="e#4667#5728#0" />
-                <element signature="e#5763#6059#0" />
-                <element signature="e#6089#6250#0" />
-                <element signature="e#6284#6288#0" />
-                <element signature="e#6328#6647#0" />
-                <element signature="e#6685#6702#0" />
-                <element signature="e#6765#6993#0" />
-                <element signature="e#7031#7088#0" />
-                <element signature="e#7122#7797#0" />
-                <element signature="e#7830#8742#0" />
-                <element signature="e#8774#9058#0" />
-                <element signature="e#18911#20169#0" />
-                <element signature="e#20208#21545#0" />
-                <element signature="e#21585#23588#0" />
-                <element signature="e#23632#23959#0" />
-                <element signature="e#24004#26890#0" />
-                <element signature="e#27005#28793#0" />
-                <element signature="e#27041#27664#0" />
-                <element signature="e#27697#27753#0" />
-                <element signature="e#27785#28113#0" />
-                <element signature="e#28147#28151#0" />
-                <element signature="e#28189#28206#0" />
-                <element signature="e#28269#28330#0" />
-                <element signature="e#28367#28424#0" />
-                <element signature="e#28463#28793#0" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScannerFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+            <state relative-caret-position="391">
+              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
@@ -84,16 +93,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Comunicacao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+            <state relative-caret-position="87">
+              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
               <folding>
-                <element signature="e#111#127#0" />
-                <element signature="e#165#492#0" />
-                <element signature="e#544#725#0" />
-                <element signature="e#761#950#0" />
-                <element signature="e#1047#1092#0" />
-                <element signature="e#1132#1265#0" />
-                <element signature="e#1321#1466#0" />
+                <element signature="e#15#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,6 +138,11 @@
       <find>deqconfJig</find>
       <find>sta8</find>
       <find>qui</find>
+      <find>ether</find>
+      <find>ssdcon</find>
+      <find>self.Jig1Ssd</find>
+      <find>self.refresh_screenTest</find>
+      <find>self.co</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,10 +191,11 @@
         <option value="$PROJECT_DIR$/OQC.py" />
         <option value="$PROJECT_DIR$/GU4.py" />
         <option value="$PROJECT_DIR$/GUI - V2.py" />
-        <option value="$PROJECT_DIR$/Comunicacao.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/che.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py" />
         <option value="$PROJECT_DIR$/ScannerFile.py" />
+        <option value="$PROJECT_DIR$/../DataTrackExport2.py" />
+        <option value="$PROJECT_DIR$/Comunicacao.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
       </list>
     </option>
@@ -202,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,12 +232,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -249,7 +259,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Teste-hard">
+  <component name="RunManager" selected="Python.GUI">
     <configuration name="Comunicacao" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OQC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -271,6 +281,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="DataTrackExport2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OQC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../DataTrackExport2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OQC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -284,27 +315,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python GUI - 3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OQC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/Python GUI - 3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -357,11 +367,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Teste-hard" />
         <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.DataTrackExport2" />
+        <item itemvalue="Python.Teste-hard" />
         <item itemvalue="Python.che" />
         <item itemvalue="Python.Comunicacao" />
-        <item itemvalue="Python.Python GUI - 3" />
       </list>
     </recent_temporary>
   </component>
@@ -418,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560395053353</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Acréscimo da verificação do SSD">
+      <created>1560555054886</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560555054886</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -432,9 +449,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18835099" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13313162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.4979592" weight="0.4222586" />
@@ -450,7 +466,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Run" order="3" visible="true" weight="0.16263238" />
+      <window_info active="true" anchor="right" id="Run" order="3" visible="true" weight="0.20574887" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18303572" />
@@ -519,18 +535,10 @@
     <MESSAGE value="Criação da interface e inclusão do ethernet" />
     <MESSAGE value="Integração da interface com o programa" />
     <MESSAGE value="Acréscimo dos demais jigs e dos inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Acréscimo dos demais jigs e dos inputs" />
+    <MESSAGE value="Acréscimo da verificação do SSD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Acréscimo da verificação do SSD" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Python_/Revisar/scratch_3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -827,79 +835,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Comunicacao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-          <folding>
-            <element signature="e#111#127#0" />
-            <element signature="e#165#492#0" />
-            <element signature="e#544#725#0" />
-            <element signature="e#761#950#0" />
-            <element signature="e#1047#1092#0" />
-            <element signature="e#1132#1265#0" />
-            <element signature="e#1321#1466#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Teste-hard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="102">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#1#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../DataTrackExport2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScannerFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+        <state relative-caret-position="391">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="e#15#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Comunicacao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3738">
-          <caret line="113" column="20" lean-forward="true" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+        <state relative-caret-position="2948">
+          <caret line="668" column="24" selection-start-line="668" selection-start-column="24" selection-end-line="668" selection-end-column="24" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#2204#2230#0" />
-            <element signature="e#2262#2292#0" />
-            <element signature="e#2325#2874#0" />
-            <element signature="e#2910#3471#0" />
-            <element signature="e#3509#3718#0" />
-            <element signature="e#3817#4632#0" />
-            <element signature="e#4667#5728#0" />
-            <element signature="e#5763#6059#0" />
-            <element signature="e#6089#6250#0" />
-            <element signature="e#6284#6288#0" />
-            <element signature="e#6328#6647#0" />
-            <element signature="e#6685#6702#0" />
-            <element signature="e#6765#6993#0" />
-            <element signature="e#7031#7088#0" />
-            <element signature="e#7122#7797#0" />
-            <element signature="e#7830#8742#0" />
-            <element signature="e#8774#9058#0" />
-            <element signature="e#18911#20169#0" />
-            <element signature="e#20208#21545#0" />
-            <element signature="e#21585#23588#0" />
-            <element signature="e#23632#23959#0" />
-            <element signature="e#24004#26890#0" />
-            <element signature="e#27005#28793#0" />
-            <element signature="e#27041#27664#0" />
-            <element signature="e#27697#27753#0" />
-            <element signature="e#27785#28113#0" />
-            <element signature="e#28147#28151#0" />
-            <element signature="e#28189#28206#0" />
-            <element signature="e#28269#28330#0" />
-            <element signature="e#28367#28424#0" />
-            <element signature="e#28463#28793#0" />
+            <element signature="e#2972#3008#0" />
+            <element signature="e#3359#3385#0" />
+            <element signature="e#3417#3447#0" />
+            <element signature="e#3480#4029#0" />
+            <element signature="e#4065#4750#0" />
+            <element signature="e#4788#4997#0" />
+            <element signature="e#5096#5911#0" />
+            <element signature="e#5946#7007#0" />
+            <element signature="e#7042#7338#0" />
+            <element signature="e#7368#7529#0" />
+            <element signature="e#7563#7567#0" />
+            <element signature="e#7607#7926#0" />
+            <element signature="e#7964#7981#0" />
+            <element signature="e#8044#8272#0" />
+            <element signature="e#8310#8367#0" />
+            <element signature="e#8401#9076#0" />
+            <element signature="e#9109#10021#0" />
+            <element signature="e#10053#10362#0" />
+            <element signature="e#10446#12373#0" />
+            <element signature="e#12409#21090#0" />
+            <element signature="e#21078#21477#0" />
+            <element signature="e#23420#24914#0" />
+            <element signature="e#24923#25420#0" />
+            <element signature="e#27765#28092#0" />
+            <element signature="e#28904#31790#0" />
+            <element signature="e#31941#32564#0" />
+            <element signature="e#32597#32653#0" />
+            <element signature="e#32685#33013#0" />
+            <element signature="e#33047#33051#0" />
+            <element signature="e#33089#33106#0" />
+            <element signature="e#33169#33230#0" />
+            <element signature="e#33267#33324#0" />
+            <element signature="e#33363#33693#0" />
+            <element signature="e#34517#34573#0" />
+            <element signature="e#34605#34933#0" />
+            <element signature="e#34967#34971#0" />
+            <element signature="e#35009#35026#0" />
+            <element signature="e#35089#35150#0" />
+            <element signature="e#35187#35244#0" />
           </folding>
         </state>
       </provider>

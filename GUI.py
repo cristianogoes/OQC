@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.patches
 from collections import deque
+import time
 
 
 ########################################################################
@@ -18,11 +19,17 @@ class screenOQC(threading.Thread):
 
         self.x1 = 0
         self.x2 = 0
+
+        # True = Serial / #False = Ethernet
+        self.com_serial = False
+
         self.firstaccess = True
         self.firstaccess2 = True
+        self.firstcom = True
+        self.firstconnect = True
 
-        self.input = True
-        self.input_w = True
+        self.input = False
+        self.input_w = False
         self.input_r = False
 
         self.loop_new = True
@@ -30,6 +37,15 @@ class screenOQC(threading.Thread):
         self.loop_active_r = False
 
         self.statusRun = True
+
+        self.co = False
+
+        self.Jig1Ssd = False
+        self.Jig1SsdStatus = False
+        self.flag1Ssd = False
+        self.flag1send = False
+
+        self.msgErro = ''
 
         self.seconds = 0
         self.num_apr = 0
@@ -44,40 +60,26 @@ class screenOQC(threading.Thread):
         self.sta7 = 1
         self.sta8 = 1
 
+        self.sendStatus1 = 'L'
+        self.sendStatus2 = 'L'
+        self.sendStatus3 = 'L'
+        self.sendStatus4 = 'L'
+        self.sendStatus5 = 'L'
+        self.sendStatus6 = 'L'
+        self.sendStatus7 = 'L'
+        self.sendStatus8 = 'L'
+
         self.a1 = 0
         self.b1 = 0
 
-        self.strComputer1 = "169.254.39.134"
-        self.strUser1 = 'DBMT01\\bb8ga121'
-        self.strPassword1 = 'Icct@052019'
-
+        self.strComputer1 = 'PC1.txt'
         self.strComputer2 = "169.254.39.134"
-        self.strUser2 = 'DBMT01\\bb8ga121'
-        self.strPassword2 = 'Icct@052019'
-
         self.strComputer3 = "169.254.39.134"
-        self.strUser3 = 'DBMT01\\bb8ga121'
-        self.strPassword3 = 'Icct@052019'
-
         self.strComputer4 = "169.254.39.134"
-        self.strUser4 = 'DBMT01\\bb8ga121'
-        self.strPassword4 = 'Icct@052019'
-
         self.strComputer5 = "169.254.39.134"
-        self.strUser5 = 'DBMT01\\bb8ga121'
-        self.strPassword5 = 'Icct@052019'
-
         self.strComputer6 = "169.254.39.134"
-        self.strUser6 = 'DBMT01\\bb8ga121'
-        self.strPassword6 = 'Icct@052019'
-
         self.strComputer7 = "169.254.39.134"
-        self.strUser7 = 'DBMT01\\bb8ga121'
-        self.strPassword7 = 'Icct@052019'
-
         self.strComputer8 = "169.254.39.134"
-        self.strUser8 = 'DBMT01\\bb8ga121'
-        self.strPassword8 = 'Icct@052019'
 
         self.label2 = Label(self.root, text="Hello", font="Arial 30", width=10)
         # self.label2.pack()
@@ -110,9 +112,21 @@ class screenOQC(threading.Thread):
 
         self.start()
 
+    def error(self):
+        ScreenError(self.root, self.msgErro)
+
     def ssdconect(self):
-        self.count1 = ScannerFile.ScandirSSD.sccannerSSD(self.strComputer1,self.strUser1,self.strPassword1)
-        print(self.count1)
+        if self.Jig1Ssd:
+            qtdSsdPc1 = self.scanner.readFile(self.strComputer1,1)
+            print("SSD: ",qtdSsdPc1)
+            if qtdSsdPc1 == "4":
+                self.Jig1SsdStatus = False
+            elif qtdSsdPc1 == "0":
+                self.Jig1SsdStatus = True
+            else:
+                self.Jig1SsdStatus = True
+            if self.flag1Ssd and self.Jig1SsdStatus:
+                self.flag1send = True
 
     def screenGUI(self):
         self.screenTest(self.root)
@@ -144,6 +158,8 @@ class screenOQC(threading.Thread):
         confButton.pack(side=LEFT, padx=2, pady=2)
         reportButton = Button(toolbar, text='Report', command=self.report)
         reportButton.pack(side=LEFT, padx=2, pady=2)
+        errorButton = Button(toolbar, text='Error', command=self.error)
+        errorButton.pack(side=LEFT, padx=2, pady=2)
         exitButton = Button(toolbar, text='Exit', command=self.quit)
         exitButton.pack(side=RIGHT, padx=2, pady=2)
 
@@ -295,65 +311,71 @@ class screenOQC(threading.Thread):
         self.pie3.get_tk_widget().pack(side=LEFT)
 
     def frame3(self):
-        fram3 = Frame(self.root, bg='white')
-        status1 = Label(fram3, width=50, height=8,fg='white', text="Em Produção", bg="green", bd=1, relief=FLAT,
+        self.fram3 = Frame(self.root, bg='white')
+        self.status1 = Label(self.fram3, width=50, height=8,fg='white', text="Em Produção", bg="green", bd=1, relief=FLAT,
                         font=('Arial', 40), anchor=CENTER)
-        status1.pack(pady=10, padx=10)
-        fram3.pack(side=TOP, fill=X)
+        self.status1.pack(pady=10, padx=10)
+        self.fram3.pack(side=TOP, fill=X)
 
     def oqcIni(self):
-        self.y = 0
-        self.yy = 0
+        if self.firstconnect:
+            time.sleep(3)
+            self.y = 0
+            self.yy = 0
 
-        df0 = []
-        self.DFX0 = pd.DataFrame(df0)
-        df1 = []
-        self.DFX1 = pd.DataFrame(df1)
-        df2 = []
-        self.DFX2 = pd.DataFrame(df2)
-        df3 = []
-        self.DFX3 = pd.DataFrame(df3)
-        df4 = []
-        self.DFX4 = pd.DataFrame(df4)
-        df5 = []
-        self.DFX5 = pd.DataFrame(df5)
-        df6 = []
-        self.DFX6 = pd.DataFrame(df6)
-        df7 = []
-        self.DFX7 = pd.DataFrame(df7)
-        df8 = []
-        self.DFX8 = pd.DataFrame(df8)
+            df0 = []
+            self.DFX0 = pd.DataFrame(df0)
+            df1 = []
+            self.DFX1 = pd.DataFrame(df1)
+            df2 = []
+            self.DFX2 = pd.DataFrame(df2)
+            df3 = []
+            self.DFX3 = pd.DataFrame(df3)
+            df4 = []
+            self.DFX4 = pd.DataFrame(df4)
+            df5 = []
+            self.DFX5 = pd.DataFrame(df5)
+            df6 = []
+            self.DFX6 = pd.DataFrame(df6)
+            df7 = []
+            self.DFX7 = pd.DataFrame(df7)
+            df8 = []
+            self.DFX8 = pd.DataFrame(df8)
 
-        arrayJig = []
-        self.dfArrayjig = pd.DataFrame(arrayJig, columns=['station', 'port', 'result'])
+            arrayJig = []
+            self.dfArrayjig = pd.DataFrame(arrayJig, columns=['station', 'port', 'result'])
 
-        arrayLog = []
-        self.dfArraylog = pd.DataFrame(arrayLog, columns=['name','pc','port','line 1','line 2','status', 'code error','result',
-                                            'line 6','port-worker','line 8', 'line 9','line 10','date - time'])
+            arrayLog = []
+            self.dfArraylog = pd.DataFrame(arrayLog, columns=['name','pc','port','line 1','line 2','status', 'code error','result',
+                                                'line 6','port-worker','line 8', 'line 9','line 10','date - time'])
 
-        self.filename = 'Log OQC.xlsx'
-        self.dfArraylog.to_excel(self.filename)
+            self.filename = 'Log OQC.xlsx'
+            self.dfArraylog.to_excel(self.filename)
 
-        confJig = [0, self.sta1,self.sta2,self.sta3,self.sta4,self.sta5,self.sta6,self.sta7,self.sta8]
-        self.deqconfJig = deque(confJig)
-        print(self.deqconfJig)
+            confJig = [0, self.sta1,self.sta2,self.sta3,self.sta4,self.sta5,self.sta6,self.sta7,self.sta8]
+            self.deqconfJig = deque(confJig)
+            print(self.deqconfJig)
 
-        self.seri = Comunicacao.ComSerial()
-        self.t = self.seri.configSerial()
-        #print(self.t.name)
+            #self.scanner = ScannerFile.Scandir(pathToWatch="C:\\Users\\bb8ga121\\Desktop\\TESTE_CHIP_IC")
+            self.scanner = ScannerFile.Scandir(pathToWatch="C:\\OQC")
+            self.scanner.configPath()
 
-        #self.ether = Comunicacao.ComEthernet()
-        #self.ether.configEthernet()
+            self.label.after(1000, self.refresh_label)
+            self.firstconnect = False
 
-        self.scanner = ScannerFile.Scandir(pathToWatch="C:\\Users\\bb8ga121\\Desktop\\TESTE_CHIP_IC")
-        #self.scanner = ScannerFile.Scandir(pathToWatch="C:\\OQC")
-        self.scanner.configPath()
-        self.label.after(1000, self.refresh_label)
+        if self.com_serial:
+            self.seri = Comunicacao.ComSerial()
+            self.t = self.seri.configSerial()
+            self.msgErro = self.t
+        else:
+            self.ether = Comunicacao.ComEthernet()
+            self.msgErro = self.ether.configEthernet()
 
     def oqcNewFile(self):
         newFile = self.scanner.scannerFile()
 
         if newFile:
+            time.sleep(3)
             ii = 0
             for ii in range(len(newFile)):
                 nameLog = newFile[ii]
@@ -397,8 +419,8 @@ class screenOQC(threading.Thread):
         self.X7 = self.dfArrayjig[self.dfArrayjig['station'] == '7'].copy()
         self.X8 = self.dfArrayjig[self.dfArrayjig['station'] == '8'].copy()
 
-        print('Database')
-        print(self.dfArrayjig)
+        #print('Database')
+        #print(self.dfArrayjig)
 
         if self.sta1:
             if self.X1.station.count() == 4:
@@ -476,7 +498,19 @@ class screenOQC(threading.Thread):
         self.dfSend = pd.concat(frames)
         self.dfSend = self.dfSend.reset_index(drop=True)
         print('Database para envio')
-        print(self.dfSend)
+        print(self.dfSend.size)
+
+        self.co = True
+        if self.firstcom:
+            self.wwww = "I" + self.sendStatus1 + self.sendStatus2 + self.sendStatus3 + \
+                        self.sendStatus4 + self.sendStatus5 + self.sendStatus6 + self.sendStatus7 \
+                        + self.sendStatus8
+            if self.com_serial:
+                self.seri.serialWrite(self.wwww)
+            else:
+                self.ether.ethernetWrite(self.wwww)
+            print("Status Jig: ", self.wwww)
+            self.firstcom = False
 
         if self.DFX1.size:
             self.DFX1 = self.DFX1.drop([0, 1, 2, 3], axis=0)
@@ -503,13 +537,16 @@ class screenOQC(threading.Thread):
             self.loop_active_r = False
             self.refresh_label1()
 
+
     def run(self):
         while self.statusRun:
             while self.input_r:
                 self.out = ''
 
-                self.out = self.t.readline()
-                #self.out = self.ether.ethernetRead()
+                if self.com_serial:
+                    self.out = self.t.readline()
+                else:
+                    self.out = self.ether.ethernetRead()
 
                 if self.out != '':
                     self.input = False
@@ -520,8 +557,10 @@ class screenOQC(threading.Thread):
             while self.loop_active_r:
                 self.out=''
 
-                self.out = self.t.readline()
-                #self.out = self.ether.ethernetRead()
+                if self.com_serial:
+                    self.out = self.t.readline()
+                else:
+                    self.out = self.ether.ethernetRead()
 
                 if self.out != '':
                     if self.dfSend.size:
@@ -529,12 +568,43 @@ class screenOQC(threading.Thread):
                         self.loop_active_w = True
                         self.loop_active_r = False
                         self.yy += 4
-                        #self.root.update()
                         self.label1.after(2000, self.refresh_label1)
                     else:
-                        self.wwww = "I" + str(self.sta1) + str(self.sta2) + str(self.sta3) + str(self.sta4) + str(
-                            self.sta5) + str(self.sta6) + str(self.sta7) + str(self.sta8)
-                        self.seri.serialWrite(self.wwww)
+                        self.wwww = "I" + self.sendStatus1 + self.sendStatus2 + self.sendStatus3 + \
+                                    self.sendStatus4 + self.sendStatus5 + self.sendStatus6 + self.sendStatus7 \
+                                    + self.sendStatus8
+                        if self.com_serial:
+                            self.seri.serialWrite(self.wwww)
+                        else:
+                            self.ether.ethernetWrite(self.wwww)
+
+            while self.co:
+                self.out = ''
+
+                if self.com_serial:
+                    self.out = self.t.readline()
+                else:
+                    self.out = self.ether.ethernetRead()
+
+                print(self.out)
+                print("Resposta: ",self.out[0:2])
+
+                if self.out[0:2] == b'I1':
+                    self.Jig1Ssd = True
+                    print("ver ssd")
+
+                if self.out[2:3] == b'R':
+                    if self.sendStatus1 == 'R':
+                        self.Jig1Ssd = True
+                        self.flag1Ssd = True
+
+                if self.out[0:1] != 'I':
+                    #if self.flag1Ssd:
+                    #    self.Jig1Ssd = True
+                    self.label2.configure(text="%s" % self.seconds)
+                    self.loop_active_w = True
+                    #self.loop_active_r = False
+                    self.label1.after(2000, self.refresh_label1)
 
     def refresh_label(self):
         """ refresh the content of the label every second """
@@ -564,6 +634,9 @@ class screenOQC(threading.Thread):
         self.subplot3.axis('equal')
         self.figure3.canvas.draw_idle()
 
+        #if self.msgErro!='':
+        #    self.status1.configure(fg='white', text="Error", bg="red", bd=1, relief=FLAT, font=('Arial', 40), anchor=CENTER)
+
         if self.input:
             self.refresh_label1()
 
@@ -580,8 +653,10 @@ class screenOQC(threading.Thread):
                                 +str(self.sta6)+str(self.sta7)+str(self.sta8)
                     print("Valor a ser enviado: ", self.wwww)
 
-                    self.seri.serialWrite(self.wwww)
-                    #self.ether.ethernetWrite(self.wwww)
+                    if self.com_serial:
+                        self.seri.serialWrite(self.wwww)
+                    else:
+                        self.ether.ethernetWrite(self.wwww)
 
                     self.input_w = False
                     self.input_r = True
@@ -591,21 +666,43 @@ class screenOQC(threading.Thread):
                 self.input_r = False
 
         if self.loop_active_w:
-            if self.dfSend.size:
+            time.sleep(3)
+            self.ssdconect()
+            self.refresh_var()
+            if self.flag1send:
+                self.wwww = "O1FFFF"
+                if self.com_serial:
+                    self.seri.serialWrite(self.wwww)
+                else:
+                    self.ether.ethernetWrite(self.wwww)
+                self.flag1send = False
+                self.flag1Ssd = False
+                self.Jig1Ssd = False
+                self.Jig1SsdStatus = False
+
+            elif self.dfSend.size:
                     self.wwww = "O"+(self.dfSend[0][self.yy])[0:1]+(self.dfSend[0][self.yy])[2:3]+(self.dfSend[0][self.yy+1])[2:3]
                     self.wwww = self.wwww + (self.dfSend[0][self.yy+2])[2:3]+(self.dfSend[0][self.yy+3])[2:3]
                     print("Valor a ser enviado: ", self.wwww)
+
+                    if self.wwww[0:2] != b'O1':
+                        self.Jig1Ssd = False
+
                     self.dfSend = self.dfSend.drop([self.yy], axis=0)
                     self.dfSend = self.dfSend.drop([self.yy+1], axis=0)
                     self.dfSend = self.dfSend.drop([self.yy+2], axis=0)
                     self.dfSend = self.dfSend.drop([self.yy+3], axis=0)
 
-                    self.seri.serialWrite(self.wwww)
-                    #self.ether.ethernetWrite(self.wwww)
+                    self.yy += 4
+
+                    if self.com_serial:
+                        self.seri.serialWrite(self.wwww)
+                    else:
+                        self.ether.ethernetWrite(self.wwww)
 
                     self.label1.configure(text="%s" % self.wwww)
                     self.loop_active_w = False
-                    self.loop_active_r = True
+                    #self.loop_active_r = True
 
                     if self.wwww[2:3] == "P":
                         self.num_apr += 1
@@ -616,6 +713,14 @@ class screenOQC(threading.Thread):
                         self.x2 = self.num_rep
                         print("x2: ", self.x2)
             else:
+                self.wwww = "I" + self.sendStatus1 + self.sendStatus2 + self.sendStatus3 + \
+                            self.sendStatus4 + self.sendStatus5 + self.sendStatus6 + self.sendStatus7 \
+                            + self.sendStatus8
+                if self.com_serial:
+                    self.seri.serialWrite(self.wwww)
+                else:
+                    self.ether.ethernetWrite(self.wwww)
+                print("Status Jig: ", self.wwww)
                 self.loop_new = True
 
     def refresh_screenTest(self):
@@ -627,6 +732,51 @@ class screenOQC(threading.Thread):
         self.sta6 = self.chk_state6.get()
         self.sta7 = self.chk_state7.get()
         self.sta8 = self.chk_state8.get()
+
+    def refresh_var(self):
+        if self.Jig1SsdStatus:
+            self.sendStatus1 = 'R'
+            self.Jig1Ssd = False
+            #self.flag1Ssd = True
+        elif self.sta1:
+            self.sendStatus1 = 'L'
+        else:
+            self.sendStatus1 = 'D'
+
+        if self.sta2:
+            self.sendStatus2 = 'L'
+        else:
+            self.sendStatus2 = 'D'
+
+        if self.sta3:
+            self.sendStatus3 = 'L'
+        else:
+            self.sendStatus3 = 'D'
+
+        if self.sta4:
+            self.sendStatus4 = 'L'
+        else:
+            self.sendStatus4 = 'D'
+
+        if self.sta5:
+            self.sendStatus5 = 'L'
+        else:
+            self.sendStatus5 = 'D'
+
+        if self.sta6:
+            self.sendStatus6 = 'L'
+        else:
+            self.sendStatus6 = 'D'
+
+        if self.sta7:
+            self.sendStatus7 = 'L'
+        else:
+            self.sendStatus7 = 'D'
+
+        if self.sta8:
+            self.sendStatus8 = 'L'
+        else:
+            self.sendStatus8 = 'D'
 
     def screenTest(self, parent):
 
@@ -764,6 +914,77 @@ class ScreenConfiguration(object):
         # request tkinter to call self.refresh after 1s (the delay is given in ms)
         self.label.after(1000, self.refresh_label)
 
+
+# ----------------------------------------------------------------------
+class ScreenError(object):
+    def __init__(self, parent,msg):
+        """Constructor"""
+        self.exc = msg
+
+        self.screenRoot = parent
+        self.hide(self.screenRoot)
+
+        self.otherFrame = Toplevel()
+        self.otherFrame.geometry("400x300")
+        self.otherFrame.title("Error")
+
+        self.center()
+        self.otherFrame.resizable(0, 0)
+        self.otherFrame.protocol('WM_DELETE_WINDOW', self.disablex)
+
+        btn = Button(self.otherFrame, text="Close", command=self.handler)
+        btn.pack()
+
+        #self.seconds = 0
+        self.label = Label(self.otherFrame, text="No Error", font="Arial 10")
+        #self.label.pack(fill=X)
+
+        self.S = Scrollbar(self.otherFrame)
+        self.T = Text(self.otherFrame, height=10, width=50,wrap=WORD)
+        self.S.pack(side=RIGHT, fill=Y)
+        self.T.pack(side=LEFT, fill=Y)
+        self.S.config(command=self.T.yview)
+        self.T.config(yscrollcommand=self.S.set)
+
+        self.label.after(1000, self.refresh_label)
+
+    def handler(self):
+        self.onCloseOtherFrame(self.screenRoot, self.otherFrame)
+
+    def center(self):
+        screen = self.otherFrame
+        screen.update_idletasks()
+        width = screen.winfo_width()
+        height = screen.winfo_height()
+        x = (screen.winfo_screenwidth() // 2) - (width // 2)
+        y = (screen.winfo_screenheight() // 2) - (height // 2)
+        screen.geometry('{}x{}+{}+{}'.format(width, height, x, y-30))
+
+    def disablex(self):
+        pass
+
+    def hide(self, parent):
+        parent.withdraw()
+
+    def onCloseOtherFrame(self, parent, otherFrame):
+        """"""
+        otherFrame.destroy()
+        self.show(parent)
+
+    def show(self,parent):
+        """"""
+        parent.update()
+        parent.deiconify()
+
+    def refresh_label(self):
+        """ refresh the content of the label every second """
+        # increment the time
+        #self.seconds += 1
+        # display the new time
+        #self.label.configure(text="%s" % self.exc)
+        self.T.insert(END, self.exc)
+        # request tkinter to call self.refresh after 1s (the delay is given in ms)
+        #self.label.after(1000, self.refresh_label)
 
 if __name__ == "__main__":
     root = Tk()
